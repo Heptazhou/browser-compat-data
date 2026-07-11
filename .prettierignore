@@ -1,3 +1,5 @@
+/.pnpmfile.cjs
+*.yaml
 *.json
 !/*.json
 !/schemas/*.json

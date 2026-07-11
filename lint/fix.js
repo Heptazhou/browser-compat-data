@@ -63,7 +63,7 @@ const load = async (options, ...files) => {
 
   for (let file of files) {
     if (file.indexOf(dirname) !== 0) {
-      file = path.resolve(dirname, '..', file);
+      file = path.resolve(dirname, '..', file).replaceAll('\\', '/');
     }
 
     /** @type {Stats} */

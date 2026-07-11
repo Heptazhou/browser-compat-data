@@ -21,6 +21,7 @@ const compat = new FlatCompat({
 export default [
   {
     ignores: [
+      '.pnpmfile.cjs',
       'eslint.config.js',
       '**/*.json',
       '!*.json',

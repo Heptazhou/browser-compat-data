@@ -25,7 +25,6 @@
     }
   },
   "types": "./build/require.d.ts",
-  "packageManager": "npm@11.12.1",
   "engines": {
     "node": ">=24",
     "npm": "^11"
@@ -34,6 +33,11 @@
     "packageManager": {
       "name": "npm",
       "version": ">=11.8.0"
+    }
+  },
+  "pnpm": {
+    "overrides": {
+      "typescript-eslint": "*"
     }
   },
   "repository": {
@@ -61,6 +65,7 @@
     "@eslint/compat": "^2.0.0",
     "@eslint/eslintrc": "^3.2.0",
     "@eslint/js": "^10.0.1",
+    "@pnpm/types": "latest-10",
     "@types/deep-diff": "~1.0.1",
     "@types/mocha": "~10.0.0",
     "@types/node": "~24.13.0",
@@ -102,7 +107,7 @@
     "yargs": "~18.0.0"
   },
   "scripts": {
-    "prepare": "npm run gentypes && npm run build",
+    "prepublish": "npm run gentypes && npm run build",
     "diff": "node scripts/diff.js",
     "diff:flat": "node scripts/diff-flat.js",
     "unittest": "NODE_ENV=test FORCE_COLOR=1 c8 mocha index.test.js --recursive \"{,!(node_modules)/**}/*.test.js\"",
